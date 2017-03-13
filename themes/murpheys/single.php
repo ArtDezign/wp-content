@@ -15,6 +15,7 @@
 get_header(); ?>
 <?php get_sidebar(); ?>
 		<div class="col-9" id="single">
+			<h1>What up buddy!</h1>
 		<h1><?php echo get_the_title(); ?></h1>
 		
 			<?php

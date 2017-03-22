@@ -1,5 +1,7 @@
 <!--sidebar-->
 <div class="col-3" id="sidebar">
+
+<div id="sidebar">
     <div class="row" id="header-image">
         
           	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width;?>" alt="murphy's Logo" />
@@ -16,6 +18,7 @@
           	<?php wp_nav_menu( array('menu' => 'Header Menu')); ?>
           
       </div>
+</div>
       
       		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
                    	<div id="secondary" class="widget-area" role="complementary">

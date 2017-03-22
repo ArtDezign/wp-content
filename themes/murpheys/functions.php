@@ -13,7 +13,7 @@ add_action( 'wp_enqueue_scripts', 'add_theme_style' );
 
 // Adding scripts
 function add_theme_script() {
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery', 'jquery-ui-core' ), 1.1, true);
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery', 'jquery-ui-core' ), 1.1, false);
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'),'1.6', false);
 
 }
@@ -113,13 +113,12 @@ class CSS_Menu_Walker extends Walker {
 
 $args = array(
 	array('name'    => __('Post Sidebar'),
+    'public'		=> true,
     'id'            => 'sidebar-1',          
 	'description'   => 'Post sidebar for Archive',
-	'class'         => '',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>',
+	'class'         => 'widget-area',
+	'taxonomies'	=> array('category'),
+	'supports'		=> array('title'),
 	),
 	array('name'    => __('Header Sidebar'),
     'id'            => 'sidebar-2',          
@@ -156,5 +155,6 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
 
 ?>

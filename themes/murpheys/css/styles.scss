@@ -31,6 +31,7 @@ $dropdown: #54823a;
 	background-size:cover;
 	height: 100%;
 	position: relative;
+	min-height: 100vh;
 }
 
 #header-image img {
@@ -110,6 +111,11 @@ $dropdown: #54823a;
   	-webkit-transition: all 0.5s ease-out;
 
 }
+
+.widget-area important{
+	border: none;
+}
+
 // start single post
 
 

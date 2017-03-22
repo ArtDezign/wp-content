@@ -9,31 +9,43 @@
  * @since 1.0
  * @version 1.0
  */
+get_header();
+get_sidebar(); ?>
 
-// Warner hopes this works please!
 
-get_header(); ?>
-<?php get_sidebar(); ?>
-		<div class="col-9" id="single">
-			<h1>What up buddy!</h1>
-		<h1><?php echo get_the_title(); ?></h1>
-		
-			<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+<div class='col-9'>
 
-					echo get_the_post_thumbnail();
-					echo get_the_content();
+	
+	<section id="primary" class="content-area">
+			
+			<h1>Hot Topics</h1>
+			
+	<div class='col-9'>
+		<main id="main" class="site-main" role="main">
+			
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+				<?php the_post_thumbnail(); ?>
+				<?php the_date(); ?>
+				<?php the_content(); ?>
+				<?php get_the_category(); ?>
+    
+			<?php endwhile; else: ?>
+				<?php _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); ?>
+			<?php endif; ?>
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-
-				endwhile; // End of the loop.
-			?>
-
-	</div><!-- #primary -->
+		</main>
 	</div>
+		<div class='col-3 navbar'>
+			<p>this will be a menu</p>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+				<div id="secondary" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+			<?php endif; ?>
 
-<?php get_footer();
+		</div>
+	</div>
+	
+	</section>
+</div>
+<?php get_footer(); ?>

@@ -9,8 +9,8 @@
       </div>
       
     	<div class="site-identity">
-            <h1><?php echo get_bloginfo('name'); ?></h1>
-            <h3><?php echo get_bloginfo('description'); ?></h3>
+            <h1>Open Everday - 10 AM to 7 PM</h1>
+            <h3>2962 Baseline Cornelius, OR 97113 <br> Phone: 503-640-1124</h3>
         </div>
       
       <div class="row" id="menu">

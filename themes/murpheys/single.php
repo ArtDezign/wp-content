@@ -14,17 +14,11 @@ get_sidebar(); ?>
 
 
 <div class='col-9'>
-
-	
-	<section id="primary" class="content-area">
-			
-			<h1>Hot Topics</h1>
-			
-	<div class='col-9'>
+<!-- 	Main content		 -->
+	<div class='col-9 content-area' >
 		<main id="main" class="site-main" role="main">
-			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<h2><?php the_title(); ?></h2>
+			<h1><?php the_title(); ?></h1>
 				<?php the_post_thumbnail(); ?>
 				<?php the_date(); ?>
 				<?php the_content(); ?>
@@ -36,16 +30,15 @@ get_sidebar(); ?>
 
 		</main>
 	</div>
-		<div class='col-3 navbar'>
-			<p>this will be a menu</p>
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-				<div id="secondary" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?></div>
-			<?php endif; ?>
+<!-- 	Sidebar -->
+	<div class='col-3 navbar'>
+		<p>this will be a menu</p>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<div id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+		<?php endif; ?>
 
-		</div>
 	</div>
-	
-	</section>
 </div>
+
 <?php get_footer(); ?>

@@ -20,7 +20,7 @@ get_header(); ?>
 				?><h1><?php echo get_the_title(); ?></h1>
 				<?php do_action( 'woocommerce_before_main_content' );  ?>
 				<div class="page">
-				<img src="<?php the_post_thumbnail_url('large'); ?>" class="image_post_full" />
+				<img src="<?php the_post_thumbnail_url('small'); ?>" class="image_post" />
 				
 				<?php
 				
